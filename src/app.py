@@ -19,10 +19,9 @@ def add_new_todo():
 
  @app.route('/todos/<int:position>', methods=['DELETE'])
 def delete_todo(position):
-        delete = delete.query.get(1)
-    db.session.delete(todos)
-    db.session.commit()
-    return delete_schema.(jsonify(todos))
+    print("This is the position to delete: ",position)
+    todos.pop(position)
+    return (jsonify(todos))
     
 # These two lines should always be at the end of your app.py file.
 if __name__ == '__main__':
